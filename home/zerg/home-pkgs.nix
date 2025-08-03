@@ -1,18 +1,18 @@
 { pkgs, config, ... }:
 {
   home.packages = with pkgs; [
+    
+    ##### Desktop apps #####
+
     anki # knowlege
     obsidian # notes
+    onlyoffice
 
-
-    alacritty
-    kitty
-    asdf-vm
-    lazygit
+    # code editors
     vscode-fhs
+    # code-cursor
     zed-editor-fhs
     kdePackages.kate # KDE editor
-
 
     # media
     krita # paint
@@ -27,38 +27,85 @@
     # massanger
     telegram-desktop
     vesktop 
+    bitwarden-desktop
 
     imv
     mpv
 
 
-    # # Desktop apps
-    # anki
-    # code-cursor
-    # imv
-    # mpv
-    # obs-studio
-    # obsidian
     # pavucontrol
     # teams-for-linux
-    # telegram-desktop
-    # vesktop
+
+    alacritty
+    kitty
+
+    ##### CLI #####
+    tmux
+    neovim
+    yazi
+    wget
+
+    fzf # fuzzyfinder
+    eza
+    btop # htop
+    ripgrep-all # ripgrep
+    cliphist
+    yt-dlp
+
+    zip
+    unzip
+
+    microfetch
+    mediainfo
+
+    brightnessctl
+    grimblast
+
+    ntfs3g
+    playerctl
+
+    #dev
+    git
+    git-graph
+    lazygit
+
+
+    asdf-vm
+    
+    ## Coding stuff
+    # JS/TS
+    nodejs_24
+    pnpm
+    bun
+    biome
+
+    go
+
+    python311
+
+    # Other
+    bemoji
+    nix-prefetch-scripts
+
+
+    # # WM stuff
+    # libsForQt5.xwaylandvideobridge
+    # libnotify
+    # xdg-desktop-portal-gtk
+    # xdg-desktop-portal-hyprland
+
+
 
     # # CLI utils
     # bc
     # bottom
-    # brightnessctl
-    # cliphist
     # ffmpeg
     # ffmpegthumbnailer
     # fzf
     # git-graph
     # grimblast
-    # htop
     # hyprpicker
     # ntfs3g
-    # mediainfo
-    # microfetch
     # playerctl
     # ripgrep
     # showmethekey
@@ -78,11 +125,6 @@
     # nodejs
     # python311
 
-    # # WM stuff
-    # libsForQt5.xwaylandvideobridge
-    # libnotify
-    # xdg-desktop-portal-gtk
-    # xdg-desktop-portal-hyprland
 
     # # Other
     # bemoji

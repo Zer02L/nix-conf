@@ -33,8 +33,8 @@
         system = "x86_64-linux";
         modules = [
           ./users/zerg.nix
-          ./home/zerg/internet-fix.nix
           ./shared/default.nix
+          ./modules/internet-fix.nix
           ./modules/default.nix
           ./hosts/desktop/configuration.nix
           ./hosts/desktop/hardware-configuration.nix
@@ -45,7 +45,7 @@
       zerg = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
         modules = [
-          ./home/zerg/default.nix
+          ./home/zerg/home.nix
         ];
       };
       # и так далее для других пользователей
