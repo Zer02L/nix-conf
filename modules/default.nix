@@ -22,7 +22,7 @@
     ./ssh.nix
     ./x11.nix
     ./zsh.nix
-    ./onlyoffice.nix
+
     ./internet-fix.nix
   ];
 }

@@ -6,7 +6,7 @@
 
     anki # knowlege
     obsidian # notes
-    onlyoffice
+    onlyoffice-desktopeditors
 
     # code editors
     vscode-fhs
@@ -41,7 +41,7 @@
 
     ##### CLI #####
     tmux
-    neovim
+    # neovim
     yazi
     wget
 
@@ -80,8 +80,14 @@
     biome
 
     go
+    hugo
+    templ
+    docker
+    docker-slim
 
     python311
+    ruff
+    uv
 
     # Other
     bemoji

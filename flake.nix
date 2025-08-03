@@ -34,7 +34,6 @@
         modules = [
           ./users/zerg.nix
           ./shared/default.nix
-          ./modules/internet-fix.nix
           ./modules/default.nix
           ./hosts/desktop/configuration.nix
           ./hosts/desktop/hardware-configuration.nix
