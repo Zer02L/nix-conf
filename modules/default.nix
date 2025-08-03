@@ -8,7 +8,7 @@
     ./kde.nix
     ./locale.nix
     ./networking.nix
-    ./packages.nix
+    # ./packages.nix
     ./settings.nix
     ./ssh.nix
     ./x11.nix

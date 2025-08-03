@@ -6,11 +6,11 @@
   imports = [
     ./firefox.nix
     ./git.nix
-    ./gui-pkgs.nix
+    ./pkgs-gui.nix
+    ./pkgs-cli.nix
     ./librewolf.nix
     ./neovim.nix
     ./ohmyposh.nix
-    ./pkgs.nix
     ./shells.nix
     ./vscode.nix
     ./yazi.nix

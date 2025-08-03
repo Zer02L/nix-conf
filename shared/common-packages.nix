@@ -8,6 +8,7 @@
     curl
     wget
     btop
+    microfetch
     home-manager
   ];
 }

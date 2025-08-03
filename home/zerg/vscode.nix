@@ -14,15 +14,13 @@
         biomejs.biome
         christian-kohler.path-intellisense
 
-        esbenp.prettier-vscode
-        bbenoist.nix
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "codeium";
-          publisher = "Codeium";
-          version = "1.5.9";
-          sha256 = "sha256-6PLn7g/znfc2uruYTqxQ96IwXxfz6Sbguua3YqZd64U=";
-        }
+        # {
+        #   name = "Kilo Code AI Agent (Cline / Roo features combined)";
+        #   publisher = "Kilo Code";
+        #   version = "4.72.15";
+        #   sha256 = "sha256:8f4defef88461f241ade62db74f01ddf391ce2b1a80057f53a31a010d0a88429";
+        # }
       ];
         userSettings = {
           "files.autoSave" = "onFocusChange";

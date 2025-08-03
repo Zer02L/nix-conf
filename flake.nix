@@ -21,6 +21,7 @@
         system = "x86_64-linux";
         modules = [
           ./users/zerg.nix
+          ./home/zerg/internet-fix.nix
           ./shared/default.nix
           ./modules/default.nix
           ./hosts/desktop/configuration.nix
