@@ -21,9 +21,9 @@
     ./neovim.nix
     ./ohmyposh.nix
     ./shells.nix
-    ./vscode.nix
+    # ./vscode.nix # требует настройки
+    # ./zed-editor.nix # требует настройки
     ./yazi.nix
-    ./zed-editor.nix
     ./zsh.nix
   ];
 

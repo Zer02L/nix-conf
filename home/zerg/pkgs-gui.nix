@@ -16,7 +16,7 @@
 
     # media
     krita # paint
-    davinci-resolve
+    # davinci-resolve # brake
     blender # 3d
     obs-studio
     brave # browser
