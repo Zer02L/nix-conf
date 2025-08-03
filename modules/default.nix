@@ -3,12 +3,10 @@ let
       user = "zerg";
 in
 {
-    
-  
 
   imports = [
 
-    import ./modules/nh.nix { inherit pkgs lib user; }
+    import ./nh.nix { inherit pkgs lib user; }
     ./env.nix
     # ./mime.nix
     # ./zram.nix
