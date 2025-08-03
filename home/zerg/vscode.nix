@@ -22,11 +22,13 @@
         #   sha256 = "sha256:8f4defef88461f241ade62db74f01ddf391ce2b1a80057f53a31a010d0a88429";
         # }
       ];
-        userSettings = {
-          "files.autoSave" = "onFocusChange";
-          "editor.formatOnSave" = false;
-          "editor.fontFamily" = "Maple Mono";
-        };
+        # userSettings = {
+          
+        #   "files.autoSave" = "onFocusChange";
+        #   "editor.formatOnSave" = false;
+        #   "editor.fontFamily" = "Maple Mono";
+          
+        # };
       };
     };
   };
