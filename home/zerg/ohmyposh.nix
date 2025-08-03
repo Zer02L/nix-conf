@@ -14,6 +14,9 @@
     # };
     enable = true;
     useTheme = "paradox";
+    
+    builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "${pkgs.oh-my-posh}/share/oh-my-posh/themes/space.omp.json"))
+
     enableBashIntegration = true;
     enableZshIntegration = true;
     enableFishIntegration = true;

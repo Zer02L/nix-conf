@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./env.nix
+    # ./mime.nix
+    ./nh.nix
+    # ./zram.nix
     ./audio.nix
     ./boot.nix
     ./devices.nix

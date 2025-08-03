@@ -4,6 +4,15 @@
   home.username = "zerg";
   home.homeDirectory = "/home/zerg"; # замени alice на имя пользователя в системе
   imports = [
+    ./alacritty.nix
+    ./bat.nix
+    ./eza.nix
+    ./lazygit.nix
+    ./obsidian.nix
+    ./stylix.nix
+    ./tmux.nix
+    ./zathrua.nix
+    
     ./firefox.nix
     ./git.nix
     ./pkgs-gui.nix
