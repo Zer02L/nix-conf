@@ -1,0 +1,4 @@
+*.zip
+*/secrets/*.*
+.env
+secrets/*
