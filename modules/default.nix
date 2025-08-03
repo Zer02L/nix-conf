@@ -1,12 +1,12 @@
-{ config, pkgs, user, ... }:
-let
-      user = "zerg";
-in
+{ config, pkgs, user, lib, ... }:
+# let
+#       user = "zerg"; # nh
+# in
 {
 
   imports = [
 
-    import ./nh.nix { inherit pkgs lib user; }
+    # import ./nh.nix { inherit pkgs lib user; } # надо фиксить
     ./env.nix
     # ./mime.nix
     # ./zram.nix

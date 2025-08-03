@@ -3,9 +3,21 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
+
+  # COMING SOON...
+  #nixvim = {
+  #  url = "github:nix-community/nixvim";
+  #  inputs.nixpkgs.follows = "nixpkgs";
+  #};
 
   outputs = { self, nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
