@@ -1,5 +1,7 @@
 { config, pkgs, lib, ... }:
-
+let
+  themeData = builtins.fromJSON (builtins.readFile "${pkgs.oh-my-posh}/share/oh-my-posh/themes/space.omp.json");
+in
 {
 
   programs.oh-my-posh = {
@@ -14,8 +16,8 @@
     # };
     enable = true;
     useTheme = "paradox";
-    
-    builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "${pkgs.oh-my-posh}/share/oh-my-posh/themes/space.omp.json"))
+
+    # builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "${pkgs.oh-my-posh}/share/oh-my-posh/themes/space.omp.json"));
 
     enableBashIntegration = true;
     enableZshIntegration = true;
