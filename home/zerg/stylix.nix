@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     dejavu_fonts
     jetbrains-mono
+    maple-mono
     noto-fonts
     noto-fonts-lgc-plus
     texlivePackages.hebrew-fonts

@@ -9,10 +9,10 @@
     ./eza.nix
     ./lazygit.nix
     ./obsidian.nix
-    ./stylix.nix
+    # ./stylix.nix # brake
     ./tmux.nix
     ./zathrua.nix
-    
+
     ./firefox.nix
     ./git.nix
     ./pkgs-gui.nix
