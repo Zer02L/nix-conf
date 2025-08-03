@@ -5,7 +5,7 @@
     obsidian # notes
 
 
-    alcritty
+    alacritty
     kitty
     asdf-vm
     lazygit
