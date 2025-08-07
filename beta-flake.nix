@@ -57,6 +57,7 @@
       };
 
       modules = [
+        inputs.nvchad4nix.homeManagerModule
         ./home/${user}/home.nix
       ];
     };

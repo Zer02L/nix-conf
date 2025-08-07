@@ -1,4 +1,8 @@
 *.zip
-*/secrets/*.*
+.*/
+# */secrets/*.*
 .env
-secrets/*
+secrets/
+*.age
+*.sops.yaml
+.crush/

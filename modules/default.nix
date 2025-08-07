@@ -10,7 +10,7 @@
     ./env.nix
     # ./mime.nix
     # ./zram.nix
-    ./audio.nix
+    ./audio/pipeware.nix
     ./boot.nix
     ./devices.nix
     ./firewall.nix
