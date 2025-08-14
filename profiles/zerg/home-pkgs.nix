@@ -39,7 +39,10 @@ in
 
     #### CLI #####
 
-    inputs.nix-ai-tools.packages.${system}.crush # cruch ai cli
+    crush
+    qwen-code
+    # inputs.nix-ai-tools.packages.${system}.crush # cruch ai cli
+    # inputs.nix-ai-tools.packages.${system}.qwen-code # qwen ai cli
     # inputs.nix4nvchad.packages.${system}.nvchad
 
     tmux
