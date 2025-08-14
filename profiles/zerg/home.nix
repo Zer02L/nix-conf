@@ -1,6 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
+
   home.username = "zerg";
   home.homeDirectory = "/home/zerg"; # замени alice на имя пользователя в системе
 
@@ -35,7 +36,10 @@
 
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  home.packages = with pkgs; [
+    crush
+    qwen-code
+  ];
 
   home.stateVersion = "25.05";
 }

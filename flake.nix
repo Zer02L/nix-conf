@@ -30,7 +30,6 @@
     nix-ai-tools.url = "github:numtide/nix-ai-tools";
 
     stylix = {
-      # url = "github:danth/stylix";
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -39,7 +38,6 @@
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.3-1.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     # Прочие модули — оставляем закомментированными
     # nix-on-droid = { ... };
     # hyprland = { ... };
@@ -85,8 +83,6 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, stylix, ... }:
   let
-    lib = nixpkgs.lib;
-
     # ---- SYSTEM SETTINGS ---- #
     systemSettings = {
       system = "x86_64-linux"; # system arch
@@ -116,19 +112,19 @@
       editor = "neovide";
       spawnEditor =
         if editor == "emacsclient" then "emacsclient -c -a 'emacs'"
-        else if elem editor [ "vim" "nvim" "nano" ] then "exec ${term} -e ${editor}"
+        else if nixpkgs.lib.elem editor [ "vim" "nvim" "nano" ] then "exec ${term} -e ${editor}"
         else if editor == "neovide" then "neovide -- --listen /tmp/nvimsocket"
         else editor;
     };
 
-    # pkgs c overlay для crush и qwen-code
-    pkgs = import nixpkgs {
-      system = systemSettings.system;
+    # pkgs с overlay для crush, qwen-code и rust
+    pkgsForSystem = system: import nixpkgs {
+      inherit system;
       overlays = [
         inputs.rust-overlay.overlays.default
         (final: prev: {
-          crush = inputs.nix-ai-tools.packages.${systemSettings.system}.crush;
-          qwen-code = inputs.nix-ai-tools.packages.${systemSettings.system}.qwen-code;
+          crush = inputs.nix-ai-tools.packages.${system}.crush;
+          qwen-code = inputs.nix-ai-tools.packages.${system}.qwen-code;
         })
       ];
       config = {
@@ -142,29 +138,26 @@
     nixosConfigurations = {
       "${systemSettings.hostname}" = nixpkgs.lib.nixosSystem {
         system = systemSettings.system;
+        specialArgs = { inherit inputs systemSettings userSettings; pkgs = pkgsForSystem systemSettings.system; };
         modules = [
           stylix.nixosModules.stylix
-          (./. + "/users" + ("/" + userSettings.username) + ".nix")
+          ./users/${userSettings.username}.nix
           ./shared/default.nix
           ./modules/default.nix
-          (./. + "/hosts" + ("/" + systemSettings.hostname) + "/configuration.nix")
-          (./. + "/hosts" + ("/" + systemSettings.hostname) + "/hardware-configuration.nix")
+          ./hosts/${systemSettings.hostname}/configuration.nix
+          ./hosts/${systemSettings.hostname}/hardware-configuration.nix
         ];
-        specialArgs = { inherit inputs systemSettings userSettings; };
       };
     };
 
     # --- Home Manager ---
     homeConfigurations = {
       "${userSettings.username}" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        system = systemSettings.system;
-
+        pkgs = pkgsForSystem systemSettings.system;
         modules = [
           stylix.homeModules.stylix
-          (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix")
+          ./profiles/${systemSettings.profile}/home.nix
         ];
-
         extraSpecialArgs = {
           inherit inputs userSettings systemSettings;
         };
